@@ -93,6 +93,7 @@ fun ReplyHomeScreen(
     )
 
     if(navigationType == ReplyNavigationType.PERMANENT_NAVIGATION_DRAWER) {
+        val navigationDrawerContentDescription = stringResource(R.string.navigation_drawer)
         PermanentNavigationDrawer(
             drawerContent = {
                 PermanentDrawerSheet(
@@ -107,6 +108,7 @@ fun ReplyHomeScreen(
                             .fillMaxHeight()
                             .background(MaterialTheme.colorScheme.inverseOnSurface)
                             .padding(dimensionResource(R.dimen.drawer_padding_content))
+                            .testTag(navigationDrawerContentDescription)
                     )
                 }
             }
@@ -199,6 +201,7 @@ private fun ReplyAppContent(
                     navigationItemContentList = navigationItemContentList,
                     modifier = Modifier
                         .fillMaxWidth()
+                        .testTag(bottomNavigationContentDescription)
                 )
             }
         }
